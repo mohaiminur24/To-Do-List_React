@@ -90,19 +90,19 @@ const Todolist = () => {
     return (
         <div className='w-4/5 mx-auto flex justify-center items-center h-screen'>
             <div className='w-4/5 mx-auto bg-white rounded-md p-5'>
-                <h1 className='text-4xl font-bold text-center'>To Do List <FaReact className='inline-block mx-2' /> </h1>
+                <h1 className='md:text-4xl text-2xl font-bold text-center'>To Do List <FaReact className='inline-block mx-2' /> </h1>
 
                 <div className={setinputtaskhide?'hidden':'block'}>
                     <div className='text-center my-5'>
-                        <input id='incompletetaskfield' onChange={(event)=>setAddtaskinput(event.target.value)} className='border rounded-md outline-none w-2/5 px-5 mx-5 py-1' placeholder='Added your list items' type="text" />
-                        <button className='text-white font-semibold px-4 py-1 rounded-md bg-slate-700' onClick={()=>addtaskinputlocal()}>ADD List</button>
+                        <input id='incompletetaskfield' onChange={(event)=>setAddtaskinput(event.target.value)} className='border block md:inline-block w-11/12 mx-auto rounded-md outline-none md:w-2/5 px-5 md:mx-5 py-1' placeholder='Added your list items' type="text" />
+                        <button className='text-white mt-3 font-semibold px-4 py-1 rounded-md bg-slate-700' onClick={()=>addtaskinputlocal()}>ADD List</button>
                     </div>
                 </div>
 
                 <div className={hiddenupdate? 'hidden':'block'}>
                     <div className='text-center my-5'>
-                        <input id='updateinputfield' onChange={(event)=>setupdateinputtask(event.target.value)} className='border rounded-md outline-none font-semibold w-2/5 px-5 mx-5 py-1' placeholder={updateTaskinput} type="text" />
-                        <button onClick={()=>updetedtask()} className='text-white font-semibold px-4 py-1 rounded-md bg-slate-700'>Update List</button>
+                        <input id='updateinputfield' onChange={(event)=>setupdateinputtask(event.target.value)} className='border block md:inline-block w-11/12 mx-auto rounded-md outline-none md:w-2/5 px-5 md:mx-5 py-1' placeholder={updateTaskinput} type="text" />
+                        <button onClick={()=>updetedtask()} className='text-white mt-3 font-semibold px-4 py-1 rounded-md bg-slate-700'>Update List</button>
                     </div>
                 </div>
 
@@ -120,7 +120,7 @@ const Todolist = () => {
                 </div>
 
 
-                <div className='mt-10 flex gap-3 justify-center'>
+                <div className='mt-10 flex flex-col md:flex-row gap-3 justify-center'>
                     <button onClick={()=>completetasklocal()} className='text-sm border py-2 px-4 shadow-sm rounded-md'>{tasktoggle? "Inomplete Task":"Complete Task"}</button>
                     <button onClick={()=>{localStorage.clear('incompletetask'),setreloadlocalstorage(!reloadlocalstorage);setHiddenupdate(true);
                     setinputtexthide(false);setCompletetasklocal()}} className='text-sm border py-2 px-4 shadow-sm rounded-md'>Clear Task</button>    
